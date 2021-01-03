@@ -38,7 +38,7 @@ public class BookController {
         List<Books> books = bookService.getAllBooksList();
         model.addAttribute("books", books);
         return "booklist";
-        //yorum satır
+        
     }
 
 
