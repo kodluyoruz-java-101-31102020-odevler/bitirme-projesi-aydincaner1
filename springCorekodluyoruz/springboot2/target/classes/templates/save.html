@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Kitap Kayıt Sayfası</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/shards.min.css">
+    </head>
+    <body>
+ <div class="container my-5">
+            <h2 class="mb-5">Kitap Kayıt</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="#" th:action="@{/page/add}" th:object="${bookContext}" method="POST">
+                        
+                        	 <div class="form-group">
+                                <label for="bookname" class="col-form-label">Kitap Adı: </label>
+                                <input type="text" th:field="*{bookname}" class="form-control" id="bookname" required>
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="booktitle" class="col-form-label">Kitap Başlık: </label>
+                                <input type="text" th:field="*{booktitle}" class="form-control" id="booktitle" required>
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="author" class="col-form-label">Yazar: </label>
+                                <input type="text" th:field="*{author}" class="form-control" id="author" required>
+                            </div>
+                            
+                            <div class="form-group">
+                            	<label for="bookaciklama" class="col-form-label">Açıklama: </label>
+                                <input type="text" th:field="*{bookaciklama}" class="form-control" id="bookaciklama" required>
+                            
+                            <div class="form-group">
+                                  <label for="booknote" class="col-form-label">Kitap notu: </label>
+                                <textarea type="text" th:field="*{booknote}" class="form-control" id="booknote"></textarea>
+                            </div>
+                            
+                            
+                            
+                            <div class="form-group">
+                                <label for=bookyear class="col-form-label">Kitap Basım Tarihi:</label>
+								<input type="date" th:field="*{bookyear}" id="bookyear" placeholder="dd.mm.yyyy" required>
+                            </div>
+                        
+                        </div>
+                        <div class="row">
+                            <div class="mt-5">
+                                <input type="submit" class="btn btn-success" value="Kaydet">
+                                <a href="/page/list" class="btn btn-primary">Kütüphane</a>
+                            </div>
+                           </div>
+                          
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
